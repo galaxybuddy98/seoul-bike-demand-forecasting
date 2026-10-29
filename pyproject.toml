@@ -1,0 +1,37 @@
+[project]
+name = 'spatial-demand-forecasting'
+version = '0.1.0'
+description = '서울시 공공자전거 시공간 수요예측 및 외부 영향요인 분석'
+readme = 'README.md'
+requires-python = '>=3.11'
+dependencies = [
+  'numpy',
+  'pandas',
+  'sqlalchemy',
+  'psycopg[binary]',
+]
+
+[project.optional-dependencies]
+gis = ['geopandas', 'pyproj', 'shapely']
+ml = ['scikit-learn', 'lightgbm']
+deep-learning = ['torch']
+service = ['fastapi', 'uvicorn[standard]', 'streamlit', 'pydeck']
+dev = ['pytest', 'pytest-cov', 'ruff', 'mypy']
+
+[tool.pytest.ini_options]
+testpaths = ['tests']
+addopts = '-ra'
+
+[tool.ruff]
+line-length = 100
+target-version = 'py311'
+
+[tool.ruff.lint]
+select = ['E', 'F', 'I', 'B', 'UP']
+
+[tool.mypy]
+python_version = '3.11'
+strict = true
+
+# 버전 잠금은 첫 데이터 수집 단계에서 실제 호환성을 검증한 뒤 추가한다.
+# PostgreSQL/PostGIS, QGIS, Docker는 pip 의존성이 아니므로 별도로 설치·구성한다.

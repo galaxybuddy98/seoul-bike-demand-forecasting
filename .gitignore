@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local data and generated artifacts
+data/
+artifacts/
+models/
+reports/generated/
+*.parquet
+*.feather
+*.joblib
+*.pkl
+*.pt
+*.pth
+
+# Databases and containers
+pgdata/
+*.db
+*.sqlite*
+
+# QGIS local/user state
+*.qgz~
+*.qgs~
+
+# Serena: keep project.yml versioned, ignore local state
+.serena/cache/
+.serena/memories/
+.serena/project.local.yml
+
+# Planning with Files local runtime markers
+.planning/
+.plan-attestation
